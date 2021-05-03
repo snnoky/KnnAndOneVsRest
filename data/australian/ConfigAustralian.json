@@ -1,0 +1,245 @@
+{
+  "DataName": "australian",
+  "DataSaveName": "australian",
+  "DataConfigName": "ConfigAustralian.json",
+  "DataPath": "../../../data/australian/",
+  "DataTypesPath": "../../../data/australian/australian-type.txt",
+  "DataSeparator": " ",
+  "DataNormalizationFrom": 0,
+  "DataNormalizationTo": 1,
+  "ClassColumn": 15,
+  "Maxs": [
+    {
+      "Col": 1,
+      "Value": 1
+    },
+    {
+      "Col": 2,
+      "Value": 80.25
+    },
+    {
+      "Col": 3,
+      "Value": 28
+    },
+    {
+      "Col": 4,
+      "Value": 3
+    },
+    {
+      "Col": 5,
+      "Value": 14
+    },
+    {
+      "Col": 6,
+      "Value": 9
+    },
+    {
+      "Col": 7,
+      "Value": 28.50
+    },
+    {
+      "Col": 8,
+      "Value": 1
+    },
+    {
+      "Col": 9,
+      "Value": 1
+    },
+    {
+      "Col": 10,
+      "Value": 67
+    },
+    {
+      "Col": 11,
+      "Value": 1
+    },
+    {
+      "Col": 12,
+      "Value": 3
+    },
+    {
+      "Col": 13,
+      "Value": 2000
+    },
+    {
+      "Col": 14,
+      "Value": 100001
+    }
+  ],
+  "Mins": [
+    {
+      "Col": 1,
+      "Value": 0
+    },
+    {
+      "Col": 2,
+      "Value": 13.75
+    },
+    {
+      "Col": 3,
+      "Value": 0
+    },
+    {
+      "Col": 4,
+      "Value": 1
+    },
+    {
+      "Col": 5,
+      "Value": 1
+    },
+    {
+      "Col": 6,
+      "Value": 1
+    },
+    {
+      "Col": 7,
+      "Value": 0
+    },
+    {
+      "Col": 8,
+      "Value": 0
+    },
+    {
+      "Col": 9,
+      "Value": 0
+    },
+    {
+      "Col": 10,
+      "Value": 0
+    },
+    {
+      "Col": 11,
+      "Value": 0
+    },
+    {
+      "Col": 12,
+      "Value": 1
+    },
+    {
+      "Col": 13,
+      "Value": 0
+    },
+    {
+      "Col": 14,
+      "Value": 1
+    }
+  ],
+  "DataSybmolicsToNumerics": [
+    {
+      "From": "a",
+      "To": 0
+    },
+    {
+      "From": "b",
+      "To": 1
+    },
+    {
+      "From": "p",
+      "To": 1
+    },
+    {
+      "From": "g",
+      "To": 2
+    },
+    {
+      "From": "gg",
+      "To": 3
+    },
+    {
+      "From": "ff",
+      "To": 1
+    },
+    {
+      "From": "d",
+      "To": 2
+    },
+    {
+      "From": "i",
+      "To": 3
+    },
+    {
+      "From": "k",
+      "To": 4
+    },
+    {
+      "From": "j",
+      "To": 5
+    },
+    {
+      "From": "aa",
+      "To": 6
+    },
+    {
+      "From": "m",
+      "To": 7
+    },
+    {
+      "From": "c",
+      "To": 8
+    },
+    {
+      "From": "w",
+      "To": 9
+    },
+    {
+      "From": "e",
+      "To": 10
+    },
+    {
+      "From": "q",
+      "To": 11
+    },
+    {
+      "From": "r",
+      "To": 12
+    },
+    {
+      "From": "cc",
+      "To": 13
+    },
+    {
+      "From": "x",
+      "To": 14
+    },
+    {
+      "From": "dd",
+      "To": 2
+    },
+    {
+      "From": "bb",
+      "To": 4
+    },
+    {
+      "From": "v",
+      "To": 5
+    },
+    {
+      "From": "n",
+      "To": 6
+    },
+    {
+      "From": "o",
+      "To": 7
+    },
+    {
+      "From": "h",
+      "To": 8
+    },
+    {
+      "From": "z",
+      "To": 9
+    },
+    {
+      "From": "t",
+      "To": 1
+    },
+    {
+      "From": "f",
+      "To": 0
+    },
+    {
+      "From": "s",
+      "To": 1
+    }   
+  ]
+}

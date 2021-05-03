@@ -1,0 +1,265 @@
+{
+  "DataName": "crx",
+  "DataSaveName": "Crx",
+  "DataConfigName": "ConfigCrx.json",
+  "DataPath": "../../../data/credit/",
+  "DataTypesPath": "../../../data/credit/credit-type.txt",
+  "DataSeparator": ",",
+  "DataNormalizationFrom": 0,
+  "DataNormalizationTo": 1,
+  "ClassColumn": 16, 
+  "Maxs": [
+    {
+      "Col": 1,
+      "Value": 2
+    },
+    {
+      "Col": 2,
+      "Value": 76.75
+    },
+    {
+      "Col": 3,
+      "Value": 28
+    },
+    {
+      "Col": 4,
+      "Value": 5
+    },
+    {
+      "Col": 5,
+      "Value": 32
+    },
+    {
+      "Col": 6,
+      "Value": 20
+    },
+    {
+      "Col": 7,
+      "Value": 27
+    },
+    {
+      "Col": 8,
+      "Value": 28.50
+    },
+    {
+      "Col": 9,
+      "Value": 28
+    },
+    {
+      "Col": 10,
+      "Value": 28
+    },
+    {
+      "Col": 11,
+      "Value": 67
+    },
+    {
+      "Col": 12,
+      "Value": 28
+    },
+    {
+      "Col": 13,
+      "Value": 31
+    },
+    {
+      "Col": 14,
+      "Value": 2000
+    },
+    {
+      "Col": 15,
+      "Value": 100000
+    }
+  ],
+  "Mins": [
+    {
+      "Col": 1,
+      "Value": 1
+    },
+    {
+      "Col": 2,
+      "Value": 13.75
+    },
+    {
+      "Col": 3,
+      "Value": 0
+    },
+    {
+      "Col": 4,
+      "Value": 3
+    },
+    {
+      "Col": 5,
+      "Value": 29
+    },
+    {
+      "Col": 6,
+      "Value": 7
+    },
+    {
+      "Col": 7,
+      "Value": 11
+    },
+    {
+      "Col": 8,
+      "Value": 0
+    },
+    {
+      "Col": 9,
+      "Value": 6
+    },
+    {
+      "Col": 10,
+      "Value": 6
+    },
+    {
+      "Col": 11,
+      "Value": 0
+    },
+    {
+      "Col": 12,
+      "Value": 6
+    },
+    {
+      "Col": 13,
+      "Value": 29
+    },
+    {
+      "Col": 14,
+      "Value": 0
+    },
+    {
+      "Col": 15,
+      "Value": 0
+    }
+  ],
+  "DataSybmolicsToNumerics": [
+    {
+      "From": "a",
+      "To": 1
+    },
+    {
+      "From": "b",
+      "To": 2
+    },
+    {
+      "From": "u",
+      "To": 3
+    },
+    {
+      "From": "y",
+      "To": 4
+    },
+    {
+      "From": "l",
+      "To": 5
+    },
+    {
+      "From": "t",
+      "To": 6
+    },
+    {
+      "From": "c",
+      "To": 7
+    },
+    {
+      "From": "d",
+      "To": 8
+    },
+    {
+      "From": "cc",
+      "To": 9
+    },
+    {
+      "From": "i",
+      "To": 10
+    },
+    {
+      "From": "j",
+      "To": 11
+    },
+    {
+      "From": "k",
+      "To": 12
+    },
+    {
+      "From": "m",
+      "To": 13
+    },
+    {
+      "From": "r",
+      "To": 14
+    },
+    {
+      "From": "q",
+      "To": 15
+    },
+    {
+      "From": "w",
+      "To": 16
+    },
+    {
+      "From": "x",
+      "To": 17
+    },
+    {
+      "From": "e",
+      "To": 18
+    },
+    {
+      "From": "aa",
+      "To": 19
+    },
+    {
+      "From": "ff",
+      "To": 20
+    },
+    {
+      "From": "v",
+      "To": 21
+    },
+    {
+      "From": "h",
+      "To": 22
+    },
+    {
+      "From": "bb",
+      "To": 23
+    },
+    {
+      "From": "n",
+      "To": 24
+    },
+    {
+      "From": "z",
+      "To": 25
+    },
+    {
+      "From": "dd",
+      "To": 26
+    },
+    {
+      "From": "o",
+      "To": 27
+    },
+    {
+      "From": "f",
+      "To": 28
+    },
+    {
+      "From": "g",
+      "To": 29
+    },
+    {
+      "From": "p",
+      "To": 30
+    },
+    {
+      "From": "s",
+      "To": 31
+    },
+    {
+      "From": "gg",
+      "To": 32
+    }
+  ]
+}
