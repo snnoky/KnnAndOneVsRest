@@ -977,7 +977,7 @@ namespace Zadanie2_1MIW
             counter = 0;
             foreach (var item in sortedClasses)
             {
-                if (counter <= countGroup[0])
+                if (counter < countGroup[0])
                 {
                     counter++;
                     continue;
@@ -986,14 +986,16 @@ namespace Zadanie2_1MIW
                 counter++;
             }
 
-            foreach (var item in help)
-            {
-                help = help.OrderBy(item => item.Value).ToList();
-            }
-            foreach (var item in help)
-            {
-                help2 = help2.OrderBy(item => item.Value).ToList();
-            }
+            //foreach (var item in help)
+            //{
+            //    help = help.OrderBy(item => item.Value).ToList();
+            //}
+            //foreach (var item in help)
+            //{
+            //    help2 = help2.OrderBy(item => item.Value).ToList();
+            //}
+            help = help.OrderBy(item => item.Value).ToList();
+            help2 = help2.OrderBy(item => item.Value).ToList();
 
             double classOneSum = 0;
             double classTwoSum = 0;
@@ -1024,18 +1026,21 @@ namespace Zadanie2_1MIW
             if (classOneSum < classTwoSum)
             {
                 //Console.WriteLine($"Decyzja {sortedClasses[0].Key}");
-                finalDecision = sortedClasses[0].Key;
+                finalDecision = help[0].Key;
                 return finalDecision;
             }
             else if (classOneSum > classTwoSum)
             {
                 //Console.WriteLine($"Decyzja {sortedClasses[sortedClasses.Count - 1].Key}");
-                finalDecision = sortedClasses[sortedClasses.Count - 1].Key;
+                finalDecision = help2[0].Key;
                 return finalDecision;
             }
-
+            else
+            {
+                finalDecision = null;
+            }
             //Console.WriteLine("Remis");
-            finalDecision = null;
+            
             return finalDecision;
 
             //Console.WriteLine("");
@@ -1220,8 +1225,3 @@ namespace Zadanie2_1MIW
         }
     }
 }
-// Dopisać możliwość zmiany metryki i wersji knn x
-
-//poprawic 4 parametry set/próbka(set)/jedna próbka/metryka(wybór jaka i niech dzieje się w knn) x
-//w interfejsie mozliwosc 1vsReszta wybor parametrów metryka typ który wariant knn i k x
-//narzędziowe funkcje milczące x
