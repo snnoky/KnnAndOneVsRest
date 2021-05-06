@@ -248,7 +248,7 @@ namespace Zadanie2_1MIW
                     }
                     else if (chosenKnn == "2")
                     {
-                        var maxK = 0;
+                        var maxK = 999999999999999;
                         var classesGroup = new List<string>();
                         var classOne = new List<string>();
                         var classTwo = new List<string>();
@@ -257,28 +257,67 @@ namespace Zadanie2_1MIW
                             classesGroup.Add((string)normalizedData.Rows[i][decisionClassColumnIndex]);
                         }
 
-                        classesGroup.Sort();
-                        var count = 0;
-                        for (int i = 0; i < classesGroup.Count; i++)
+                        var result = classesGroup.GroupBy(x => x)
+                            .ToDictionary(y => y.Key, y => y.Count())
+                            .OrderByDescending(z => z.Value);
+
+                        foreach (var item in result)
                         {
-                            if (i > 0 && classesGroup[i] != classesGroup[i - 1])
+                            if (item.Value < maxK)
                             {
-                                break;
+                                maxK = item.Value;
                             }
-
-                            classOne.Add(classesGroup[i]);
-                            count++;
                         }
+                        //classesGroup.Sort();
+                        //var count = 0;
+                        //for (int i = 0; i < classesGroup.Count; i++)
+                        //{
+                        //    if (i > 0 && classesGroup[i] != classesGroup[i - 1])
+                        //    {
+                        //        break;
+                        //    }
 
-                        for (int i = count; i < classesGroup.Count; i++)
+                        //    classOne.Add(classesGroup[i]);
+                        //    count++;
+                        //}
+
+                        //for (int i = count; i < classesGroup.Count; i++)
+                        //{
+                        //    classTwo.Add(classesGroup[i]);
+                        //}
+
+                        //maxK = Math.Min(classOne.Count, classTwo.Count);
+                        //if (maxK > 1)
+                        //{
+                        //    Console.WriteLine($"Podaj k max to: {maxK-1}");
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine($"Podaj k max to: {maxK}");
+                        //}
+                        //k = Convert.ToInt32(Console.ReadLine());
+                        if (maxK > 1)
                         {
-                            classTwo.Add(classesGroup[i]);
+                            Console.WriteLine($"Podaj k max to: {maxK - 1}");
+                            k = Convert.ToInt32(Console.ReadLine());
+
+                            if (k <= 0 || k >= maxK)
+                            {
+                                Console.WriteLine("Nie dozwolone k!");
+                                return;
+                            }
                         }
+                        else
+                        {
+                            Console.WriteLine($"Podaj k max to: {maxK}");
+                            k = Convert.ToInt32(Console.ReadLine());
 
-                        maxK = Math.Min(classOne.Count, classTwo.Count);
-                        Console.WriteLine($"Podaj k max to: {maxK}");
-                        k = Convert.ToInt32(Console.ReadLine());
-
+                            if (k <= 0 || k > maxK)
+                            {
+                                Console.WriteLine("Nie dozwolone k!");
+                                return;
+                            }
+                        }
                         if (k <= 0 || k > maxK)
                         {
                             Console.WriteLine("Nie dozwolone k!");
@@ -501,7 +540,7 @@ namespace Zadanie2_1MIW
                     }
                     else if (chosenKnn == "2")
                     {
-                        var maxK = 0;
+                        var maxK = 999999999999999;
                         var classesGroup = new List<string>();
                         var classOne = new List<string>();
                         var classTwo = new List<string>();
@@ -510,33 +549,60 @@ namespace Zadanie2_1MIW
                             classesGroup.Add((string) normalizedData.Rows[i][decisionClassColumnIndex]);
                         }
 
-                        classesGroup.Sort();
-                        var count = 0;
-                        for (int i = 0; i < classesGroup.Count; i++)
+                        var result = classesGroup.GroupBy(x => x)
+                            .ToDictionary(y => y.Key, y => y.Count())
+                            .OrderByDescending(z => z.Value);
+
+                        foreach (var item in result)
                         {
-                            if (i > 0 && classesGroup[i] != classesGroup[i - 1])
+                            if (item.Value < maxK)
                             {
-                                break;
+                                maxK = item.Value;
                             }
-
-                            classOne.Add(classesGroup[i]);
-                            count++;
                         }
 
-                        for (int i = count; i < classesGroup.Count; i++)
+                        //classesGroup.Sort();
+                        //var count = 0;
+                        //for (int i = 0; i < classesGroup.Count; i++)
+                        //{
+                        //    if (i > 0 && classesGroup[i] != classesGroup[i - 1])
+                        //    {
+                        //        break;
+                        //    }
+
+                        //    classOne.Add(classesGroup[i]);
+                        //    count++;
+                        //}
+
+                        //for (int i = count; i < classesGroup.Count; i++)
+                        //{
+                        //    classTwo.Add(classesGroup[i]);
+                        //}
+
+                        //maxK = Math.Min(classOne.Count, classTwo.Count);
+                        if (maxK > 1)
                         {
-                            classTwo.Add(classesGroup[i]);
+                            Console.WriteLine($"Podaj k max to: {maxK-1}");
+                            k = Convert.ToInt32(Console.ReadLine());
+
+                            if (k <= 0 || k >= maxK)
+                            {
+                                Console.WriteLine("Nie dozwolone k!");
+                                return;
+                            }
                         }
-
-                        maxK = Math.Min(classOne.Count, classTwo.Count);
-                        Console.WriteLine($"Podaj k max to: {maxK}");
-                        k = Convert.ToInt32(Console.ReadLine());
-
-                        if (k <= 0 || k > maxK)
+                        else
                         {
-                            Console.WriteLine("Nie dozwolone k!");
-                            return;
+                            Console.WriteLine($"Podaj k max to: {maxK}");
+                            k = Convert.ToInt32(Console.ReadLine());
+
+                            if (k <= 0 || k > maxK)
+                            {
+                                Console.WriteLine("Nie dozwolone k!");
+                                return;
+                            }
                         }
+                        
 
                         Console.WriteLine("Wybierz metrykę: 1-Euklides, 2-Czebyszew, 3-Manhattan, 4-Minkowski");
                         chosenMetrics = Console.ReadLine();
@@ -941,50 +1007,83 @@ namespace Zadanie2_1MIW
                 //Console.WriteLine("{0} {1}", grp.Key, grp.Count());
                 countGroup.Add(grp.Count());
             }
-
-            //if (countGroup[0] < countGroup[1])
-            //{
-            //    if (k > countGroup[0])
-            //    {
-            //        //Console.WriteLine("Niedozwolone k!");
-            //        finalDecision = null;
-            //        return finalDecision;
-            //    }
-            //}
-
-            //if (countGroup[1] < countGroup[0])
-            //{
-            //    if (k > countGroup[1])
-            //    {
-            //        //Console.WriteLine("Niedozwolone k!");
-            //        finalDecision = null;
-            //        return finalDecision;
-            //    }
-            //}
-            var help = new List<KeyValuePair<string, double>>(); //firstclass
-            var help2 = new List<KeyValuePair<string, double>>(); //secondclass
-            int counter = 0; //count rows
-            foreach (var item in sortedClasses)
+            var classes = new List<string>();
+            foreach (var item in groupedDecisions)
             {
-                if (counter == countGroup[0])
+                classes.Add(item.Key);
+            }
+            var distancesValues = new List<double>();
+            var sumOfClasses = new double[classes.Count];
+            foreach (var item in distances)
+            {
+                distancesValues.Add(item.Value);
+            }
+            
+            for (int i = 0; i < sumOfClasses.Length; i++)
+            {
+                var licznik = 0;
+                var index = 0;
+                while (licznik < k)
                 {
-                    break;
+                    if ((string)trainSample.Rows[decisionsRow[index]][decisionClassColumnIndex] == classes[i])
+                    {
+                        sumOfClasses[i] += distancesValues[index];
+                        licznik++;
+                    }
+
+                    index++;
                 }
-                help.Add(new KeyValuePair<string, double>(item.Key, item.Value));
-                counter++;
             }
 
-            counter = 0;
-            foreach (var item in sortedClasses)
+            var indexOfDecision = 0;
+            var ties =  new List<string>();
+            for (int i = 0; i < sumOfClasses.Length; i++)
             {
-                if (counter < countGroup[0])
+                if (sumOfClasses[i] < sumOfClasses[indexOfDecision])
                 {
-                    counter++;
-                    continue;
+                    indexOfDecision = i;
                 }
-                help2.Add(new KeyValuePair<string, double>(item.Key, item.Value));
-                counter++;
             }
+
+            for (int i = 0; i < sumOfClasses.Length-1; i++)
+            {
+                if (sumOfClasses[i] == sumOfClasses[i+1])
+                {
+                    ties.Add($"tie{i}");
+                }
+            }
+
+            if (ties.Count == sumOfClasses.Length-1)
+            {
+                finalDecision = null;
+                return finalDecision;
+            }
+            finalDecision = classes[indexOfDecision];
+            
+            //var help = new List<KeyValuePair<string, double>>(); //firstclass
+            //var help2 = new List<KeyValuePair<string, double>>(); //secondclass
+            //int counter = 0; //count rows
+            //foreach (var item in sortedClasses)
+            //{
+            //    if (counter == countGroup[0])
+            //    {
+            //        break;
+            //    }
+            //    help.Add(new KeyValuePair<string, double>(item.Key, item.Value));
+            //    counter++;
+            //}
+
+            //counter = 0;
+            //foreach (var item in sortedClasses)
+            //{
+            //    if (counter < countGroup[0])
+            //    {
+            //        counter++;
+            //        continue;
+            //    }
+            //    help2.Add(new KeyValuePair<string, double>(item.Key, item.Value));
+            //    counter++;
+            //}
 
             //foreach (var item in help)
             //{
@@ -994,51 +1093,51 @@ namespace Zadanie2_1MIW
             //{
             //    help2 = help2.OrderBy(item => item.Value).ToList();
             //}
-            help = help.OrderBy(item => item.Value).ToList();
-            help2 = help2.OrderBy(item => item.Value).ToList();
+            //help = help.OrderBy(item => item.Value).ToList();
+            //help2 = help2.OrderBy(item => item.Value).ToList();
 
-            double classOneSum = 0;
-            double classTwoSum = 0;
-            counter = 0;
-            foreach (var item in help)
-            {
-                if (counter == k)
-                {
-                    break;
-                }
+            //double classOneSum = 0;
+            //double classTwoSum = 0;
+            //counter = 0;
+            //foreach (var item in help)
+            //{
+            //    if (counter == k)
+            //    {
+            //        break;
+            //    }
 
-                classOneSum += item.Value;
-                counter++;
-            }
+            //    classOneSum += item.Value;
+            //    counter++;
+            //}
 
-            counter = 0;
-            foreach (var item in help2)
-            {
-                if (counter == k)
-                {
-                    break;
-                }
+            //counter = 0;
+            //foreach (var item in help2)
+            //{
+            //    if (counter == k)
+            //    {
+            //        break;
+            //    }
 
-                classTwoSum += item.Value;
-                counter++;
-            }
+            //    classTwoSum += item.Value;
+            //    counter++;
+            //}
 
-            if (classOneSum < classTwoSum)
-            {
-                //Console.WriteLine($"Decyzja {sortedClasses[0].Key}");
-                finalDecision = help[0].Key;
-                return finalDecision;
-            }
-            else if (classOneSum > classTwoSum)
-            {
-                //Console.WriteLine($"Decyzja {sortedClasses[sortedClasses.Count - 1].Key}");
-                finalDecision = help2[0].Key;
-                return finalDecision;
-            }
-            else
-            {
-                finalDecision = null;
-            }
+            //if (classOneSum < classTwoSum)
+            //{
+            //    //Console.WriteLine($"Decyzja {sortedClasses[0].Key}");
+            //    finalDecision = help[0].Key;
+            //    return finalDecision;
+            //}
+            //else if (classOneSum > classTwoSum)
+            //{
+            //    //Console.WriteLine($"Decyzja {sortedClasses[sortedClasses.Count - 1].Key}");
+            //    finalDecision = help2[0].Key;
+            //    return finalDecision;
+            //}
+            //else
+            //{
+            //    finalDecision = null;
+            //}
             //Console.WriteLine("Remis");
             
             return finalDecision;
@@ -1225,3 +1324,8 @@ namespace Zadanie2_1MIW
         }
     }
 }
+// Dopisać możliwość zmiany metryki i wersji knn x
+
+//poprawic 4 parametry set/próbka(set)/jedna próbka/metryka(wybór jaka i niech dzieje się w knn) x
+//w interfejsie mozliwosc 1vsReszta wybor parametrów metryka typ który wariant knn i k x
+//narzędziowe funkcje milczące x
